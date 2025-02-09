@@ -59,7 +59,6 @@ void postfixToInfix(char* postfix, char* infix) {
             char* op2 = pop(&stack);
             char* op1 = pop(&stack);
 
-            // Create a new string for the infix expression
             char* expr = (char*)malloc(strlen(op1) + strlen(op2) + 4);
             sprintf(expr, "(%s%c%s)", op1, current, op2);
 
@@ -67,11 +66,9 @@ void postfixToInfix(char* postfix, char* infix) {
         }
     }
 
-    // The remaining element in the stack will be the final infix expression
     strcpy(infix, pop(&stack));
 }
 
-// Main function to test the postfix to infix conversion
 int main() {
     char postfix[MAX], infix[MAX];
 
